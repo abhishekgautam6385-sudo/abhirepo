@@ -1,0 +1,66 @@
+.h-wrapper {
+  z-index: 99;
+  position: sticky;
+  top: 0;
+}
+.h-container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: var(--secondary);
+  justify-content: space-between;
+}
+
+.h-menu {
+  gap: 2rem;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.h-menu > * {
+  transition: color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.h-menu > *:hover {
+  cursor: pointer;
+  color: #2cb67d;
+  transform: translateY(-2px);
+  box-shadow: rgb(167, 43, 43);
+}
+.h-menu a {
+  position: relative;
+}
+.h-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #2cb67d;
+  transition: width 0.25s ease;
+}
+.h-menu a:hover::after {
+  width: 100%;
+}
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  .h-menu {
+    color: var(--black);
+    position: absolute;
+    gap: 2rem;
+    font-weight: 500;
+    flex-direction: column;
+    right: 4rem;
+    top: 3rem;
+    background: white;
+    display: flex;
+    border-radius: 10px;
+    transition: all 200ms ease;
+    align-items: flex-start;
+    padding: 3rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  }
+}
